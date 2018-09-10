@@ -20,6 +20,8 @@ class AddAfterList(uds.Slist):
                 cur.next = nn
                 break
             cur = cur.next
+        else:
+            return None
         self.count += 1
 
 def test3():
@@ -29,4 +31,8 @@ def test3():
     sl.AddFirst(50)
     sl.AddLast(40)
     sl.AddAfter(20,30)
+    assert(sl.AddAfter(15,35) == None)
     assert(sl.length() == 5)
+
+if __name__ == '__main__':
+    test3()
