@@ -4,6 +4,7 @@
 ## Assignment: Implementing the Linked List DataStructure
 ## Question: Create a Class Slist to implement the working of Single Linked List DataStructure.
 #################################################################################################
+import random
 
 class Slist:
 
@@ -78,6 +79,12 @@ def test_class():
     assert(sl.length() == 1)
     sl.DelLast()
     assert(sl.length() == 0)
+
+
+def seedlist(sl):
+    for i in range(5):
+        sl.AddFirst(random.randint(i*3,(i+1)*3))
+        sl.AddLast(random.randint(2*i*6,2*(i+1)*6))
 
 if __name__ == '__main__':
     test_class()
